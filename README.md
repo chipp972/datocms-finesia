@@ -1,40 +1,28 @@
-# Gatsby Portfolio Website
-
-This repo contains a static website written with [GatsbyJS](https://www.gatsbyjs.org/), integrated with content coming from [DatoCMS](https://www.datocms.com).
-
-![Preview](preview.png)
-
-[See the live demo](https://demo-datocms-gatsby.netlify.com/)
-
-If you want to use try this out yourself, you first need to set up a project on DatoCMS which will host your data.
-
-You can [sign up for a free account](https://dashboard.datocms.com/signup) and then you can simply click this button:
-
-[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/projects/new-from-template/static-website/gatsby-portfolio)
+# Finesia Website
 
 ## Repo usage
 
 First, install the dependencies of this project:
 
-```
+```bash
 npm install
 ```
 
 Add an `.env` file containing the read-only API token of your DatoCMS site:
 
-```
+```bash
 echo 'DATO_API_TOKEN=abc123' >> .env
 ```
 
 Then, to run this website in development mode (with live-reload):
 
-```
+```bash
 npm run develop
 ```
 
 To build the final, production ready static website:
 
-```
+```bash
 npm run build
 ```
 

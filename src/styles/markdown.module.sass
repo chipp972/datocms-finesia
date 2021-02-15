@@ -1,0 +1,21 @@
+@import "./variables/index"
+
+.markdown
+  h1
+    @include title
+    font-weight: $bold
+    padding-bottom: size(8)
+    +tablet
+      padding-bottom: size(10)
+
+  h2
+    @include subtitle
+    padding-bottom: size(5)
+    +tablet
+      padding-bottom: size(8)
+  
+  p
+    @include usual-text
+    padding-bottom: size(8)
+    +tablet
+      padding-bottom: size(10)

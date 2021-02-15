@@ -1,0 +1,63 @@
+$font-family: Karla, Helvetica, sans-serif
+$bold: 700
+
+$factor-font-size: 1.25
+$base-font-size: 12
+
+@function fontSize($value: 0)
+  $result: $base-font-size
+  @for $_ from 0 to $value
+    $result: ceil($result * $factor-font-size)
+
+  @return $result * 1px
+
+@mixin big-title
+    font-size: fontSize(6)
+    font-weight: $bold
+    +tablet
+        font-size: fontSize(8)
+    +widescreen
+        font-size: fontSize(9)
+
+@mixin big-subtitle
+    font-size: fontSize(5)
+    +tablet
+        font-size: fontSize(7)
+    +widescreen
+        font-size: fontSize(8)
+
+@mixin title
+    font-size: fontSize(4)
+    +tablet
+        font-size: fontSize(6)
+    +widescreen
+        font-size: fontSize(7)
+
+@mixin subtitle
+    font-size: fontSize(3)
+    line-height: 1.2
+    +tablet
+        font-size: fontSize(5)
+    +widescreen
+        font-size: fontSize(6)
+
+@mixin important-text
+    font-size: fontSize(2)
+    line-height: 1.2
+    +tablet
+        font-size: fontSize(4)
+
+@mixin highlighted-text
+    font-size: fontSize(1)
+    +tablet
+        font-size: fontSize(3)
+
+@mixin usual-text
+    font-size: fontSize(1)
+    +tablet
+        font-size: fontSize(2)
+
+@mixin small-text
+    font-size: fontSize(0)
+    +tablet
+        font-size: fontSize(1)

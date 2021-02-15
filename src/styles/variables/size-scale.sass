@@ -1,0 +1,15 @@
+$factor: 1.25
+$base-size: 4
+
+@function size($value: 1)
+  $result: $base-size
+  @for $_ from 0 through $value
+    $result: ceil($result * $factor)
+
+  @return $result * 1px
+
+$xxl-size: 60px
+$xl-size: 38px
+$l-size: 24px
+$md-size: 16px
+$sm-size: 10px

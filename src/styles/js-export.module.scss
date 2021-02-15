@@ -1,0 +1,12 @@
+@import "./variables/index";
+
+:export {
+  xxlSize: $xxl-size;
+  xlSize: $xl-size;
+  lSize: $l-size;
+  mdSize: $md-size;
+  smSize: $sm-size;
+
+  mainColor: $active-color;
+  secondaryColor: $border-color;
+}
