@@ -1,19 +1,15 @@
-/* eslint-disable jsx-a11y/anchor-has-content, jsx-a11y/anchor-is-valid*/
+import '../styles/global.sass';
+import React, { useState } from 'react';
+import { Link, StaticQuery, graphql } from 'gatsby';
+import { HelmetDatoCms } from 'gatsby-source-datocms';
 
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import { StaticQuery, graphql } from "gatsby";
-import { HelmetDatoCms } from "gatsby-source-datocms";
-
-import "../styles/global.sass";
-
+// eslint-disable-next-line max-lines-per-function
 const TemplateWrapper = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <StaticQuery
       query={graphql`
-        query LayoutQuery {
+        query TemplateWrapperQuery {
           datoCmsSite {
             globalSeo {
               siteName
@@ -43,8 +39,9 @@ const TemplateWrapper = ({ children }) => {
           }
         }
       `}
-      render={data => (
-        <div className={`container ${showMenu ? "is-open" : ""}`}>
+      // eslint-disable-next-line max-lines-per-function
+      render={(data) => (
+        <div className={`container ${showMenu ? 'is-open' : ''}`}>
           <HelmetDatoCms
             favicon={data.datoCmsSite.faviconMetaTags}
             seo={data.datoCmsHome.seoMetaTags}
@@ -57,8 +54,7 @@ const TemplateWrapper = ({ children }) => {
               <div
                 className="sidebar__intro"
                 dangerouslySetInnerHTML={{
-                  __html:
-                    data.datoCmsHome.introTextNode.childMarkdownRemark.html
+                  __html: data.datoCmsHome.introTextNode.childMarkdownRemark.html
                 }}
               />
               <ul className="sidebar__menu">
@@ -75,15 +71,12 @@ const TemplateWrapper = ({ children }) => {
                     key={profile.profileType}
                     href={profile.url}
                     target="blank"
-                    className={`social social--${profile.profileType.toLowerCase()}`}
-                  >
-                    {" "}
+                    className={`social social--${profile.profileType.toLowerCase()}`}>
+                    {' '}
                   </a>
                 ))}
               </p>
-              <div className="sidebar__copyright">
-                {data.datoCmsHome.copyright}
-              </div>
+              <div className="sidebar__copyright">{data.datoCmsHome.copyright}</div>
             </div>
           </div>
           <div className="container__body">
@@ -91,7 +84,7 @@ const TemplateWrapper = ({ children }) => {
               <div className="mobile-header">
                 <div className="mobile-header__menu">
                   <button
-                    onClick={e => {
+                    onClick={(e) => {
                       e.preventDefault();
                       setShowMenu(!showMenu);
                     }}
@@ -110,9 +103,4 @@ const TemplateWrapper = ({ children }) => {
   );
 };
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.object
-};
-
 export default TemplateWrapper;
-/* eslint-enable jsx-a11y/anchor-has-content, jsx-a11y/anchor-is-valid*/

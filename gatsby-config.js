@@ -19,9 +19,9 @@ module.exports = {
         description,
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#92CAB5',
+        theme_color: '#0965EA',
         display: 'standalone',
-        icon: 'static/img/favicon-512x512.png',
+        icon: 'static/img/favicon.png',
         icon_options: {
           purpose: 'any maskable'
         }

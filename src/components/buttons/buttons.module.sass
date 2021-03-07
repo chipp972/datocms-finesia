@@ -1,0 +1,79 @@
+@import "../../styles/variables"
+
+$button-border-width: 5px
+
+@mixin cta
+  cursor: pointer
+  display: flex;
+  align-items: center
+  justify-content: center
+  font-family: $font-family
+  text-align: center
+  text-decoration: none;
+  padding: size(5) size(8)
+  min-width: 250px
+  max-width: 450px
+
+.mainCta
+  @include usual-text
+  @include cta
+  color: $white
+  background: $main-color
+  transition: 0.3s background ease-in-out
+
+  &:hover
+    background: $dark-main-color
+
+.mainGhostCta
+  @include usual-text
+  @include cta
+  border: $button-border-width solid $main-color
+  color: $main-color
+  transition: 0.3s background ease-in-out
+
+  &:hover
+    background: $dark-main-color
+    color: $white
+
+.secondaryCta
+  @include usual-text
+  @include cta
+  color: $dark-body-color
+  padding: size(5) size(8)
+  background: $secondary-color
+  transition: 0.3s background ease-in-out
+
+  &:hover
+    background: $dark-secondary-color
+
+
+.link
+  @include usual-text
+  @include cta
+  text-decoration: none;
+  cursor: pointer
+  color: $base-body-color
+  font-weight: $bold
+  position: relative
+  padding: 0
+  min-width: 0
+  max-width: none
+  display: inline-flex
+
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    height: 2px
+    width: 100%
+    background-color: $base-body-color
+
+.leadingIcon
+  width: 24px
+  height: 24px
+  margin-right: size(4)
+
+.trailingIcon
+  width: 24px
+  height: 24px
+  margin-left: size(2)

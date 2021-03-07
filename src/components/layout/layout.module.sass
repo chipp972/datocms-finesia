@@ -1,0 +1,29 @@
+@import '../../styles/variables/index';
+
+.mainContainer
+  margin-top: $navbar-height
+  transform: translate3d(0px, 0, 0)
+  transition: transform 0.2s ease-in-out
+
+  +tablet
+    flex: 1
+    overflow: hidden
+    margin-top: $navbar-height-from-tablet
+
+.section
+  padding: 0 size(4) size(10) size(4)
+  +big-mobile
+    padding: 0 size(8) size(10) size(8)
+  +tablet
+    padding: 0 size(10) size(10) size(10)
+  +desktop
+    padding: 0 size(12) size(15) size(12)
+  +big-desktop
+    padding: 0 size(14) size(15) size(14)
+  +widescreen
+    padding: 0 size(16) size(15) size(16)
+
+.fullWidthSection
+  padding-left: 0
+  padding-right: 0
+  margin: 0

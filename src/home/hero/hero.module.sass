@@ -1,0 +1,38 @@
+@import "../../styles/variables"
+
+.hero
+  position: relative
+
+  .backgroundImage
+    position: absolute
+    z-index: -1
+    left: 0
+    top: 0
+    height: 100%
+    width: 100%
+    object-fit: cover
+
+  .heroTitle
+    @include big-title
+    padding: size(9) 0 size(8) 0
+    +tablet
+      padding: size(12) 0 size(8) 0
+      max-width: 600px
+
+  .heroSubtitle
+    @include usual-text
+    padding-bottom: size(12)
+    +tablet
+      max-width: 500px
+
+  .buttonGroup
+    display: flex
+    flex-direction: column
+    align-items: center
+    +tablet
+      flex-direction: row
+      align-items: center
+
+    .cta
+      margin-bottom: size(5)
+      margin-right: size(7)

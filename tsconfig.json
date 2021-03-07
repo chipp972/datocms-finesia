@@ -26,6 +26,8 @@
     "**/*.spec.*",
     "**/build/**",
     "**/dist/**",
-    "**/*.stories.*"
+    "**/*.stories.*",
+    "gatsby-node.js",
+    "gatsby-config.js",
   ]
 }

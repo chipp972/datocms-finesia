@@ -1,0 +1,118 @@
+@import "../../styles/variables/index"
+
+nav.navbar
+  display: flex
+  flex-direction: column
+  background-color: $dark-bg-color
+  padding-top: 0
+  padding-bottom: 0
+  height: $navbar-height
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: $navbar-z-index
+  box-shadow: 0px 5px 10px 10px $shadow-color
+
+  +tablet
+    flex-direction: row
+    align-items: center
+    height: $navbar-height-from-tablet
+
+  .navbarInner
+    display: flex
+    align-items: center
+    height: 100%
+
+    .menuIcon
+      display: inline-flex
+      cursor: pointer
+      margin-left: auto
+      width: 24px
+      height: 24px
+      background-color: transparent
+      border: none
+      padding: 0
+
+      +tablet
+        display: none
+
+  .logo
+    display: flex
+    text-decoration: none
+    align-items: center
+    color: $base-body-color
+    height: 100%
+
+    +tablet
+      height: 80%
+
+    img
+      height: 80%
+
+  .menu
+    display: none
+
+    &Open
+      display: flex
+      flex-direction: column
+      background-color: $dark-bg-color
+      margin-left: -50px
+      margin-right: -50px
+
+    +tablet
+      flex-direction: row
+      margin-left: auto
+      margin-right: 0
+      display: flex
+      height: 100%
+    
+    li
+      position: relative
+      display: flex
+      align-items: center
+      height: 100%
+      padding: size(4)
+      justify-content: center
+
+      +tablet
+        padding: 0
+
+      &:hover :not(.active, .highlighted)
+          +tablet
+            background-color: $base-bg-color
+
+      a
+        text-decoration: none
+        color: $white
+        @include usual-text
+
+        +tablet
+          margin: 0 size(2)
+          @include small-text
+
+        +desktop
+          margin: 0 size(4)
+          @include usual-text
+
+      &.active
+        background-color: $base-bg-color
+        +tablet
+          background-color: $dark-bg-color
+
+        a
+          +tablet
+            color: $dark-secondary-color
+
+        +tablet
+          &::after
+            content: ''
+            position: absolute
+            height: 6px
+            background-color: $dark-secondary-color
+            bottom: 0
+            width: 100%
+
+      &.highlighted
+        +tablet
+          background-color: $main-color
