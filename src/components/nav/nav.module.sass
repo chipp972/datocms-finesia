@@ -72,11 +72,7 @@ nav.navbar
       display: flex
       align-items: center
       height: 100%
-      padding: size(4)
       justify-content: center
-
-      +tablet
-        padding: 0
 
       &:hover :not(.active, .highlighted)
           +tablet
@@ -85,14 +81,20 @@ nav.navbar
       a
         text-decoration: none
         color: $white
+        height: 100%
+        width: 100%
+        text-align: center
+        padding: size(4)
         @include usual-text
 
         +tablet
-          margin: 0 size(2)
+          padding: 0 size(2)
+          width: initial
+          line-height: $navbar-height-from-tablet
           @include small-text
 
         +desktop
-          margin: 0 size(4)
+          padding: 0 size(4)
           @include usual-text
 
       &.active
