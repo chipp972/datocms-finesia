@@ -4,6 +4,7 @@ import { Layout } from '../components/layout/base';
 import { Hero } from '../home/hero/hero';
 import { TextImageSection, TextImageSectionType } from '../home/text-image-section/text-image-section';
 import imageRightSrc from '../../tmp/image-right.png';
+import { Partners } from '../home/partners/partners';
 
 const firstSection = {
   title: 'Notre metier',
@@ -24,6 +25,7 @@ const IndexPage = ({ data, path }) => (
   <Layout path={path}>
     <Hero />
     <TextImageSection {...firstSection} />
+    <Partners />
     <div style={{ height: '100vh', backgroundColor: 'red' }}>test content</div>
     <div style={{ height: '100vh', backgroundColor: 'blue' }}>test content</div>
   </Layout>

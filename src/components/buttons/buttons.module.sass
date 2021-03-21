@@ -46,7 +46,6 @@ $button-border-width: 5px
   &:hover
     background: $dark-secondary-color
 
-
 .link
   @include usual-text
   @include cta
@@ -55,18 +54,15 @@ $button-border-width: 5px
   color: $base-body-color
   font-weight: $bold
   position: relative
-  padding: 0
+  padding: 0 0 5px 0
   min-width: 0
   max-width: none
   display: inline-flex
+  background: linear-gradient($base-body-color 0 0) bottom /var(--d, 40%) 3px no-repeat
+  transition: 0.5s
 
-  &::after
-    content: ''
-    position: absolute
-    bottom: 0
-    height: 2px
-    width: 100%
-    background-color: $base-body-color
+  &:hover
+    --d: 100%
 
 .leadingIcon
   width: 24px
